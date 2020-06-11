@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Video Slider</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <section>
+            <video id="slider" autoplay muted data_id="0">
+                <source src="./videos/video0.mp4" type="video/mp4">
+            </video>
+            <ul class="navigation">
+                <li><img src="./images/thumb0.png"></li>
+                <li><img src="./images/thumb1.png"></li>
+                <li><img src="./images/thumb2.png"></li>
+                <li><img src="./images/thumb3.png"></li>
+            </ul>
+            <input id="toogle" type="image" src="./images/arrow_up.png" />
+        </section>
+        <script type="text/javascript">
+            const img_list = document.querySelectorAll('img');
+            const slider = document.getElementById("slider");
+            const toogle = document.getElementById('toogle');
+            // Add click listener and id for each img
+            for (let index = 0; index < img_list.length; index++) {
+                const element = img_list[index];
+                element.id = index;
+                element.addEventListener("click", function(e){                    
+                    slider.src = "./videos/video"+e.target.id+".mp4";
+                    slider.setAttribute('data_id', e.target.id);
+                })
+            }
+            // Play the next video
+            // If prefer loop video, just add "loop" into video label
+            slider.addEventListener("ended", function(e){
+                let newId = (parseInt(e.target.getAttribute('data_id')) +1)%4;
+                slider.setAttribute('data_id', newId);
+                slider.src = "./videos/video"+newId+".mp4";
+            })
+
+            toogle.addEventListener("click", function(){
+                const src = new String(this.src);
+                if(src.search('down') !== -1){
+                    for(img of img_list){
+                        img.style.transition = "0.9s";
+                        img.style.opacity = "0.8";
+                        img.style.visibility = "visible";
+                    }
+                    this.src = './images/arrow_up.png';
+                }
+                else{
+                    for(img of img_list){
+                        img.style.opacity = "0";
+                        img.style.transition = "0.9s";
+                        img.style.visibility = "hidden";
+                    }
+                    this.src = './images/arrow_down.png';
+                }
+            })
+            
+        </script>
+    </body>
+</html>
