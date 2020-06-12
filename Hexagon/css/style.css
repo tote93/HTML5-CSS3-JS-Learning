@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    position: relative;
+    background: #000;    
+}
+
+.container {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    animation: animate 5s infinite;
+    transition: 3s;
+}
+.row {
+    display: inline-flex;    
+    margin-top: -32px;
+    margin-left: -50px;
+}
+.row:nth-child(odd) {
+    margin-left: 1px;
+}
+
+.hexagon {
+    position: relative;
+    width: 100px;
+    margin: 1px;
+    height: 110px;
+    background: #111;
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transition: 5s;
+}
+
+.hexagon:hover {
+    transition: 0s;
+    background: #0f0;
+}
+
+.hexagon:before{
+    content: '';
+    top: 0;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background: rgba(255, 255, 255, 0.02);    
+}
+
+@keyframes animate {
+    0% {filter: hue-rotate(0deg);}
+    100% {filter: hue-rotate(360deg);}
+}
