@@ -26,6 +26,7 @@ section .navigation {
     transform: translateX(-50%);
     z-index: 100;
     align-items: center;
+
 }
 
 section .navigation img {
@@ -37,6 +38,9 @@ section .navigation img {
     height: 100px;
     transition: 0.6s;
     cursor: pointer;
+    display: flex;   
+    margin-left:50%;
+    transform: translateX(-50%); 
 }
 
 section .navigation img:hover {
@@ -44,6 +48,7 @@ section .navigation img:hover {
     height: 130px;
     transition: 0.8s;
 }
+
 section #toogle {
     bottom: 20px;
     display: flex;
@@ -59,6 +64,120 @@ section #toogle {
 section #toogle:hover {
     width: 60px;
     height: 50px; 
-    transition: 0.7s;
 }
 
+@keyframes cover {
+    0% {
+        height: 100%;
+        width: 100%;
+        filter: blur(5px);
+    }
+    10%{
+        height: 90%;
+        width: 90%;
+        filter: blur(10px);
+    }
+    20%{
+        height: 80%;
+        width: 80%;
+        filter: blur(15px);
+    }
+    30%{
+        height: 70%;
+        width: 70%;
+        filter: blur(20px);
+    }
+    40%{
+        height: 60%;
+        width: 60%;
+        filter: blur(25px);
+    }
+    50%{
+        height: 50%;
+        width: 50%;
+        filter: blur(30px);
+    }
+    60%{
+        height: 40%;
+        width: 40%;
+        filter: blur(35px);
+    }
+    70%{
+        height: 30%;
+        width: 30%;
+        filter: blur(40px);
+    }
+    80%{
+        height: 20%;
+        width: 20%;
+        filter: blur(45px);
+    }
+    90%{
+        height: 10%;
+        width: 10%;
+        filter: blur(50px);
+    }
+    100%{
+        height: 0%;
+        width: 0%; 
+        filter: blur(55px);       
+    }
+}
+
+@keyframes uncover {
+    0%{
+        height: 0%;
+        width: 0%;
+        filter: blur(55px);
+    }
+    10%{
+        height: 10%;
+        width: 10%;
+        filter: blur(50px);
+    }
+    20%{
+        height: 20%;
+        width: 20%;
+        filter: blur(45px);
+    }
+    30%{
+        height: 30%;
+        width: 30%;
+        filter: blur(40px);
+    }    
+    40%{
+        height: 40%;
+        width: 40%;
+        filter: blur(35px);
+    } 
+    50%{
+        height: 50%;
+        width: 50%;
+        filter: blur(30px);
+    } 
+    60%{
+        height: 60%;
+        width: 60%;
+        filter: blur(25px);
+    }  
+    70%{
+        height: 70%;
+        width: 70%;
+        filter: blur(20px);
+    }   
+    80%{
+        height: 80%;
+        width: 80%;
+        filter: blur(15px);
+    }    
+    90%{
+        height: 90%;
+        width: 90%;
+        filter: blur(10px);
+    }             
+    100%{
+        height: 100%;
+        width: 100%;    
+        filter: blur(5px);    
+    }
+}
