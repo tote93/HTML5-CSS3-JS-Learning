@@ -1,0 +1,145 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'consolas';
+}
+
+
+body {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url("../img/background.jpg");
+    background-size: cover;
+    z-index: 100;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: url('../img/rain.png');
+    animation: rain .25s infinite linear;
+}
+
+@keyframes rain {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 10% 100%;
+    }
+}
+
+section .main {
+    text-align: center;
+    width: 100%;
+    display: block;
+    position: relative;
+}
+
+section .main h2 {
+    font-size: 3em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+section .main input {
+    padding: 15px;
+    font-size: 1.6em;
+    width: 30%;
+    border: none;
+    border-bottom: solid 1px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+section .main input:focus {
+    outline: none;
+}
+
+button {
+    padding: 20px 30px;
+    background: cornflowerblue;
+    color: white;
+    margin: 10px;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    overflow: hidden;
+    transition: 0.5s;
+    position: relative;
+}
+
+button:hover {
+    background: #a41ee9;
+}
+
+.tasks {
+    display: grid;
+    position: relative;
+    margin-top: 20px;
+    grid-gap: 10px;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+}
+
+div.box {
+    padding: 15px;
+    height: 100%;
+    border: 1px solid;
+    text-align: center;
+    width: 60%;
+    margin: 5px auto;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+    border: none;
+    transition: 1s;
+    background: #fff;
+    opacity: 0.9;
+}
+
+div.box h3 {
+    font-size: 2em;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+div.box:hover {
+    background: url('../img/trash.png') repeat 0 0;
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+    background-position: center;
+    align-content: center;
+    color: transparent;
+    cursor: pointer;
+    transition: 1s;
+    background-color: rgb(180, 87, 87);
+    width: 60%;
+    transform: scale(1.1);
+    border-radius: 15px;
+}

@@ -1,0 +1,47 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Garamond, serif;
+}
+section {
+    position: relative;
+    display: flex;
+    overflow: hidden;  
+    height: 100vh;
+    width: 100%;
+    background: rgb(110, 181, 238);
+    color: white;
+}
+section div {
+    width: 50%;
+    overflow: hidden;
+    position: relative;
+}
+section div h2 {
+    white-space: nowrap;
+    position: absolute;
+    font-size: 10em;
+    line-height: 100vh;
+    animation: animate 60s linear infinite;
+}
+
+@keyframes animate {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+section div:nth-child(1){
+    background-image: url("../img/background.jpg");
+    background-size: cover;
+}
+section div:nth-child(1) h2{
+    -webkit-text-stroke: 2px;
+    -webkit-text-stroke-color: #fff;
+    -webkit-text-fill-color: transparent;
+    left: 100%;
+}

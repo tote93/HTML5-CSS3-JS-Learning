@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="#" rel="shortcut icon">
+</head>
+<body>
+    <section>
+        <img id="background" src="./bg.jpg" alt="Background Img">
+        <button id="handleChange">Change Background</button>
+    </section>
+    <script>
+        var changeBtn = document.getElementById("handleChange");
+        var bg = document.getElementById("background");
+        changeBtn.addEventListener("click", function () {
+            console.log(document.body.clientHeight)
+            console.log(document.body.clientWidth)
+            bg.style.animation = "3s cubic-bezier(0.4, 0, 1, 1) 0s 1 normal forwards running transition"
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Fortnite Game</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="shortcut icon" href="#">
+    </head>
+    <body>             
+        <audio id="shootAudio" autostart="false">
+            <source src="shoot_sound.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+    </body>
+    <script>
+        const body = document.querySelector('body');
+        const audio = document.getElementById('shootAudio');
+        const randomImg = {0: './img/21.png', 1: './img/42.png'};
+        body.addEventListener("click", function(e){
+            const span = document.createElement("span");
+            let randElement = Math.round(Math.random());
+            span.style.backgroundImage = `url('${randomImg[randElement]}')`;
+            span.style.left = e.clientX+"px";
+            span.style.top = e.clientY+"px";
+            body.appendChild(span);
+            audio.play();
+        });        
+    </script>
+</html>
