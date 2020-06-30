@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Simple Calendar</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="#" rel="shortcut icon">
+</head>
+<body>
+    <div class="calendar">
+        <p id="monthName"></p>
+        <p id="weekDay"></p>
+        <p id="monthDay"></p>
+        <p id="year"></p>
+    </div>
+    <script>
+        const lang = navigator.language;
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September",
+            "October", "November", "December"
+        ];
+        const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+        let date = new Date();
+        document.getElementById("monthName").innerHTML = months[date.getMonth()];
+        document.getElementById("weekDay").innerHTML = days[date.getDay()];
+        document.getElementById("monthDay").innerHTML = date.getDate();
+        document.getElementById("year").innerHTML = date.getFullYear();
+    </script>
+</body>
+</html>
