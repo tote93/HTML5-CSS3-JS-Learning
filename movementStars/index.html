@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cloud Forest</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="#" rel="shortcut icon">
+</head>
+<body>
+    <div class="scene">
+        <div class="moon"></div>
+        <img src="./img/forest.png" alt="Forest">
+    </div>
+    <script>
+        const scene = document.querySelector(".scene");
+        let nStars = 0;
+        while (nStars < 1000) {
+            const star = document.createElement("span");
+            let duration = Math.random() * 10
+            star.style.top = Math.floor(Math.random() * window.innerHeight) + "px";
+            star.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
+            star.style.width = 1 + Math.floor(Math.random() * 2) + "px";
+            star.style.height = 1 + Math.floor(Math.random() * 2) + "px";
+            star.style.animationDuration = 5 + duration + "s";
+            star.style.animationDelay = duration + "s";
+            scene.appendChild(star);
+            nStars++;
+        }</script>
+    <script src="js/main.js"></script>
+</body>
+</html>
